@@ -57,7 +57,6 @@
       background-size: 60px 60px;
     }
 
-    /* glowing blob */
     .hero::after {
       content: "";
       position: absolute;
@@ -319,7 +318,6 @@
     .contact-label { font-size: .7rem; font-weight: 600; text-transform: uppercase; letter-spacing: .1em; color: var(--muted); }
     .contact-value { font-size: .95rem; color: var(--navy); font-weight: 500; }
 
-    /* ── MISSION CARDS ────────────────────── */
     .mission-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -365,7 +363,6 @@
 
     .mission-card p:last-child { margin-bottom: 0; }
 
-    /* accordion */
     .accordion { margin-bottom: 12px; }
 
     .accordion summary {
@@ -426,7 +423,6 @@
       line-height: 1.6;
     }
 
-    /* skills grid */
     .skills-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -465,7 +461,6 @@
 
     .skills-block ul li:last-child { border-bottom: none; }
 
-    /* ── FOOTER ───────────────────────────── */
     footer {
       text-align: center;
       padding: 30px 20px;
@@ -477,13 +472,11 @@
 
     footer strong { color: var(--white); }
 
-    /* ── ANIMATIONS ───────────────────────── */
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(20px); }
       to   { opacity: 1; transform: translateY(0); }
     }
 
-    /* ── RESPONSIVE ───────────────────────── */
     @media (max-width: 680px) {
       header { padding: 0 16px; }
       nav a  { padding: 6px 9px; font-size: .78rem; }
