@@ -369,19 +369,6 @@ nav a:hover {
   box-shadow: 0 8px 24px rgba(13,27,42,.1);
 }
 
-/* Nouvelle mission — mise en valeur avec bordure accent */
-.mission-card--new {
-  border-color: rgba(59,130,246,.4);
-  background: rgba(59,130,246,.03);
-}
-
-.mission-card--new .mission-num::after {
-  content: " — Nouveau";
-  color: var(--gold);
-  font-weight: 700;
-  font-size: .6rem;
-  letter-spacing: .1em;
-}
 
 .mission-num {
   font-size: .7rem;
