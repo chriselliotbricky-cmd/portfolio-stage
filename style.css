@@ -239,6 +239,43 @@ nav a:hover {
 .stage-text { font-size: .95rem; color: #3d5166; }
 .stage-text strong { color: var(--navy); display: block; margin-bottom: 4px; }
 
+/* ── SERVICE INFORMATIQUE GRID ────────── */
+.service-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 16px;
+}
+
+.service-item {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  background: var(--light);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 16px 18px;
+}
+
+.service-icon {
+  font-size: 1.4rem;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.service-item strong {
+  display: block;
+  color: var(--navy);
+  font-size: .95rem;
+  margin-bottom: 4px;
+}
+
+.service-item p {
+  font-size: .88rem;
+  color: #3d5166;
+  margin-bottom: 0;
+}
+
 /* ── ÉPREUVE STEPS ────────────────────── */
 .steps { display: flex; flex-direction: column; gap: 16px; margin-top: 20px; }
 
@@ -330,6 +367,20 @@ nav a:hover {
 .mission-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 8px 24px rgba(13,27,42,.1);
+}
+
+/* Nouvelle mission — mise en valeur avec bordure accent */
+.mission-card--new {
+  border-color: rgba(59,130,246,.4);
+  background: rgba(59,130,246,.03);
+}
+
+.mission-card--new .mission-num::after {
+  content: " — Nouveau";
+  color: var(--gold);
+  font-weight: 700;
+  font-size: .6rem;
+  letter-spacing: .1em;
 }
 
 .mission-num {
