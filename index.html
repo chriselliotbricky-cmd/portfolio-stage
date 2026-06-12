@@ -87,7 +87,7 @@
         <div class="stage-dot"></div>
         <div class="stage-text">
           <strong>Cité Royale (ICC) — Service informatique, Croissy-Beaubourg</strong>
-          Déploiement d'une machine virtuelle Linux Ubuntu sur VMware, gestion du parc informatique via GLPI et FusionInventory, administration Active Directory et fusion de partitions sous Windows 10 avec AOMEI.
+          Déploiement d'une machine virtuelle Linux Ubuntu sur VMware, gestion du parc informatique via GLPI et FusionInventory, administration Active Directory, fusion de partitions sous Windows 10 avec AOMEI, réinstallation de postes avec clé USB bootable et déploiement logiciel via Ninite.
         </div>
       </div>
     </div>
@@ -289,7 +289,9 @@
         Stage effectué à la <strong>Cité Royale</strong>, un grand complexe situé au
         <strong>21 rue des Veilles Vignes, 77146 Croissy-Beaubourg</strong>, principalement utilisé par
         l'Impact Centre Chrétien (ICC). Ce lieu accueille des événements religieux,
-        culturels et des conférences réunissant plusieurs milliers de personnes.
+        culturels et des conférences réunissant plusieurs milliers de personnes. La Cité Royale contribue
+        également au dynamisme de la commune en attirant des visiteurs venant de toute la France et
+        de différents pays francophones.
       </p>
       <p>
         Stage de fin d'années BTS SIO effectué du <strong>18 mai au 16 juin 2026</strong>, sous la tutelle de <strong>B. Ezoua-Bayle</strong>.
@@ -307,12 +309,51 @@
         <span class="tag">DHCP</span>
         <span class="tag">Cisco</span>
         <span class="tag">MobaXterm</span>
+        <span class="tag">Ninite</span>
         <span class="tag">Vercel</span>
         <span class="tag">GitHub</span>
       </div>
     </div>
 
-    <!-- 5 missions -->
+    <!-- Organisation du service informatique -->
+    <div class="card">
+      <h3>Organisation du service informatique</h3>
+      <p>Le service informatique utilisait plusieurs outils d'administration pour gérer le parc et surveiller l'état des équipements :</p>
+      <div class="tag-row" style="margin-bottom:16px;">
+        <span class="tag">GLPI</span>
+        <span class="tag">FusionInventory</span>
+        <span class="tag">Active Directory</span>
+        <span class="tag">VMware</span>
+        <span class="tag">Outils de déploiement</span>
+        <span class="tag">Solutions de sauvegarde</span>
+      </div>
+      <p>Le service était divisé en plusieurs pôles complémentaires :</p>
+      <div class="service-grid">
+        <div class="service-item">
+          <div class="service-icon">💻</div>
+          <div>
+            <strong>Développement web</strong>
+            <p>Conception et maintenance des différents sites web de l'organisation selon les catégories utilisées.</p>
+          </div>
+        </div>
+        <div class="service-item">
+          <div class="service-icon">🎨</div>
+          <div>
+            <strong>Design & communication</strong>
+            <p>Conception des éléments visuels : logos, supports d'affichage et identité graphique.</p>
+          </div>
+        </div>
+        <div class="service-item">
+          <div class="service-icon">🔒</div>
+          <div>
+            <strong>Sécurité réseau</strong>
+            <p>Architecture sécurisée et gestion des équipements réseau : switches, routeurs, pare-feux (Administrateur Sécurité Réseau).</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 6 missions -->
     <div class="mission-grid">
       <div class="mission-card">
         <div class="mission-num">Mission 01</div>
@@ -339,6 +380,11 @@
         <h4>Mise en service d'un espace de travail</h4>
         <p>Installation et configuration complète d'un nouvel espace informatique : postes, réseau, imprimante, télévision avec boîtier IPTV.</p>
       </div>
+      <div class="mission-card mission-card--new">
+        <div class="mission-num">Mission 06</div>
+        <h4>Réinstallation de postes avec clé USB bootable et Ninite</h4>
+        <p>Remise en service de plusieurs ordinateurs portables via clé USB bootable, modification du BIOS/UEFI et déploiement automatisé des logiciels avec Ninite.</p>
+      </div>
     </div>
 
     <div class="card">
@@ -353,7 +399,7 @@
             <li>Téléchargement de l'image ISO officielle Ubuntu</li>
             <li>Création de la VM dans VMware (RAM, disque, processeurs)</li>
             <li>Installation et configuration du système (langue, clavier, utilisateur)</li>
-            <li>Mise à jour du système et tests réseau</li>
+            <li>Mise à jour du système, installation des outils VMware et tests réseau</li>
           </ul>
           <p><strong>Commandes utilisées :</strong></p>
           <code>sudo apt update
@@ -371,10 +417,11 @@ ls</code>
           <p><strong>Outils utilisés :</strong></p>
           <ul>
             <li><strong>GLPI</strong> — inventaire, tickets d'incidents, gestion des utilisateurs</li>
-            <li><strong>FusionInventory</strong> — remontée automatique des informations matérielles et logicielles</li>
+            <li><strong>FusionInventory</strong> — remontée automatique des informations matérielles et logicielles (agents installés sur postes Windows et Linux)</li>
             <li><strong>Active Directory</strong> — création de comptes, groupes, GPO, sécurité des postes</li>
           </ul>
-          <p><strong>Tâches effectuées :</strong> consultation du parc, vérification des postes, supervision, déploiement de logiciels, assistance utilisateur.</p>
+          <p><strong>Tâches effectuées :</strong> consultation du parc, vérification des postes, supervision, déploiement de logiciels, assistance utilisateur, maintenance matérielle et logicielle.</p>
+          <p><strong>Importance :</strong> La gestion de parc permet d'assurer le suivi des équipements, d'améliorer la sécurité, de limiter les pannes et d'anticiper les renouvellements matériels.</p>
         </div>
       </details>
 
@@ -384,12 +431,12 @@ ls</code>
           <p><strong>Objectif :</strong> fusionner les partitions C: et D: pour augmenter l'espace disponible.</p>
           <p><strong>Étapes :</strong></p>
           <ul>
-            <li>Analyse de la structure des disques existants</li>
+            <li>Analyse de la structure des disques existants (C: OS — 185,47 Go ; D: DATA — 279,45 Go)</li>
             <li>Vérification et sauvegarde des données importantes</li>
             <li>Sélection des partitions et lancement de la fusion dans AOMEI</li>
             <li>Redémarrage et vérification finale du stockage et du démarrage Windows</li>
           </ul>
-          <p><strong>Compétences développées :</strong> gestion du stockage Windows, compréhension des partitions, importance des sauvegardes.</p>
+          <p><strong>Compétences développées :</strong> gestion du stockage Windows, compréhension des partitions, risques liés aux manipulations de disques, importance des sauvegardes.</p>
         </div>
       </details>
 
@@ -400,9 +447,10 @@ ls</code>
           <p><strong>Étapes :</strong></p>
           <ul>
             <li>Analyse de l'infrastructure réseau (points d'accès, switches, serveur Windows)</li>
-            <li>Installation et activation du rôle DHCP sur Windows Server</li>
+            <li>Installation et activation du rôle DHCP sur Windows Server depuis le gestionnaire de serveur</li>
             <li>Configuration de l'étendue DHCP (plage IP, masque, passerelle, DNS, durée du bail)</li>
-            <li>Connexion aux points d'accès Cisco via MobaXterm (CLI)</li>
+            <li>Connexion aux points d'accès Cisco via MobaXterm (CLI) à l'aide de leurs adresses IP</li>
+            <li>Accès à l'interface d'administration web de chaque équipement pour vérification</li>
             <li>Suivi des adresses IP dans un fichier Excel dédié</li>
             <li>Vérification de la connectivité et de l'attribution des adresses</li>
           </ul>
@@ -418,10 +466,41 @@ ls</code>
           <ul>
             <li>Analyse des besoins : nombre de postes, équipements, connexions réseau</li>
             <li>Installation des équipements : unités centrales, écrans, claviers, souris, câbles réseau, imprimante, télévision avec boîtier IPTV</li>
+            <li>Raccordement et vérification de chaque équipement</li>
             <li>Vérification de la connectivité : réseau local, Internet, ressources partagées</li>
-            <li>Test des imprimantes réseau (impression page de test)</li>
+            <li>Test des imprimantes réseau (impression d'une page de test)</li>
           </ul>
           <p><strong>Résultats :</strong> espace de travail entièrement opérationnel et intégré au réseau de l'entreprise.</p>
+        </div>
+      </details>
+
+      <details class="accordion">
+        <summary>Mission 6 — Réinstallation de postes avec clé USB bootable et Ninite</summary>
+        <div class="accordion-body">
+          <p><strong>Objectif :</strong> remettre en service plusieurs ordinateurs portables nécessitant une réinstallation complète du système d'exploitation.</p>
+          <p><strong>Étapes :</strong></p>
+          <ul>
+            <li>Connexion de la clé USB bootable contenant les fichiers d'installation</li>
+            <li>Redémarrage et accès au BIOS/UEFI via la touche F2</li>
+            <li>Modification de l'ordre de démarrage pour placer la clé USB en priorité</li>
+            <li>Installation du système d'exploitation (choix de la langue, configuration du disque, installation des fichiers système)</li>
+            <li>Déploiement automatisé des logiciels via <strong>Ninite</strong> (présent directement sur la clé USB)</li>
+          </ul>
+          <p><strong>Logiciels installés avec Ninite :</strong></p>
+          <div class="tag-row">
+            <span class="tag">Google Chrome</span>
+            <span class="tag">Firefox</span>
+            <span class="tag">Opera</span>
+            <span class="tag">VLC</span>
+            <span class="tag">7-Zip</span>
+            <span class="tag">GIMP 3.2.4</span>
+            <span class="tag">Winamp</span>
+            <span class="tag">Visual Studio Code</span>
+            <span class="tag">FileZilla</span>
+            <span class="tag">OpenOffice</span>
+            <span class="tag">SumatraPDF</span>
+          </div>
+          <p style="margin-top:12px;"><strong>Compétences développées :</strong> installation et configuration d'un OS, modification des paramètres BIOS/UEFI, utilisation d'outils d'automatisation du déploiement logiciel, optimisation du temps d'intervention.</p>
         </div>
       </details>
     </div>
@@ -437,11 +516,11 @@ ls</code>
         <summary>Étapes du déploiement</summary>
         <div class="accordion-body">
           <ul>
-            <li>Découverte de la structure du projet (HTML, CSS, images)</li>
-            <li>Création d'un dépôt GitHub et envoi des fichiers</li>
-            <li>Connexion du dépôt à Vercel et configuration des paramètres</li>
+            <li>Découverte de la structure du projet (HTML, CSS, images) et rôle de chaque fichier</li>
+            <li>Création d'un dépôt GitHub et envoi des fichiers (gestion de versions)</li>
+            <li>Connexion du dépôt à Vercel et configuration des paramètres de déploiement</li>
             <li>Déploiement automatique et génération de l'URL publique</li>
-            <li>Vérifications : affichage, liens, images, compatibilité navigateurs</li>
+            <li>Vérifications : affichage, liens, images, compatibilité navigateurs, temps de chargement</li>
             <li>Test de la mise à jour automatique après modification du dépôt GitHub</li>
           </ul>
           <p style="margin-top:10px;"><strong>Portfolio en ligne :</strong> <a href="https://portfolio-stage-five.vercel.app/" target="_blank" rel="noopener" style="color:var(--accent);">portfolio-stage-five.vercel.app</a></p>
@@ -462,6 +541,8 @@ ls</code>
             <li>Gestion des partitions Windows</li>
             <li>Configuration DHCP / réseau Cisco</li>
             <li>Administration MobaXterm</li>
+            <li>Réinstallation OS via clé USB bootable</li>
+            <li>Déploiement logiciel avec Ninite</li>
             <li>Déploiement web (Vercel / GitHub)</li>
           </ul>
         </div>
@@ -474,6 +555,7 @@ ls</code>
             <li>Communication</li>
             <li>Analyse et résolution de problèmes</li>
             <li>Documentation technique</li>
+            <li>Préparation d'un environnement de travail professionnel</li>
           </ul>
         </div>
       </div>
