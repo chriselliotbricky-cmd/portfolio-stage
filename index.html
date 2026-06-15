@@ -87,7 +87,7 @@
         <div class="stage-dot"></div>
         <div class="stage-text">
           <strong>Cité Royale (ICC) — Service informatique, Croissy-Beaubourg</strong>
-          Déploiement d'une machine virtuelle Linux Ubuntu sur VMware, gestion du parc informatique via GLPI et FusionInventory, administration Active Directory, fusion de partitions sous Windows 10 avec AOMEI, réinstallation de postes avec clé USB bootée et déploiement logiciel via Ninite.
+          Déploiement d'une machine virtuelle Linux Ubuntu sur VMware, gestion du parc informatique via GLPI et FusionInventory, administration Active Directory, fusion de partitions sous Windows 10 avec AOMEI, réinstallation de postes avec clé USB bootée et déploiement logiciel via Ninite, installation et mise en service d'un serveur NAS Synology dans la salle serveur de l'auditorium.
         </div>
       </div>
     </div>
@@ -310,6 +310,7 @@
         <span class="tag">Cisco</span>
         <span class="tag">MobaXterm</span>
         <span class="tag">Ninite</span>
+        <span class="tag">Synology NAS</span>
         <span class="tag">Vercel</span>
         <span class="tag">GitHub</span>
       </div>
@@ -353,7 +354,7 @@
       </div>
     </div>
 
-    <!-- 6 missions -->
+    <!-- 7 missions -->
     <div class="mission-grid">
       <div class="mission-card">
         <div class="mission-num">Mission 01</div>
@@ -380,10 +381,15 @@
         <h4>Mise en service d'un espace de travail</h4>
         <p>Installation et configuration complète d'un nouvel espace informatique : postes, réseau, imprimante, télévision avec boîtier IPTV.</p>
       </div>
-      <div class="mission-card mission-card--new">
+      <div class="mission-card">
         <div class="mission-num">Mission 06</div>
         <h4>Réinstallation de postes avec une clé USB bootée et Ninite</h4>
-        <p>Remise en service de plusieurs ordinateurs portables via clé USB bootée, modification du BIOS/UEFI et déploiement automatisé des logiciels avec Ninite.</p>
+        <p>Remise en service de plusieurs ordinateurs portables via une clé USB bootée, modification du BIOS/UEFI et déploiement automatisé des logiciels avec Ninite.</p>
+      </div>
+      <div class="mission-card">
+        <div class="mission-num">Mission 07</div>
+        <h4>Installation d'un serveur NAS Synology</h4>
+        <p>Installation physique et mise en service d'un serveur NAS Synology dans la salle serveur de l'auditorium pour le stockage centralisé et le partage des données.</p>
       </div>
     </div>
 
@@ -503,6 +509,28 @@ ls</code>
           <p style="margin-top:12px;"><strong>Compétences développées :</strong> installation et configuration d'un OS, modification des paramètres BIOS/UEFI, utilisation d'outils d'automatisation du déploiement logiciel, optimisation du temps d'intervention.</p>
         </div>
       </details>
+
+      <details class="accordion">
+        <summary>Mission 7 — Installation d'un serveur NAS Synology</summary>
+        <div class="accordion-body">
+          <p><strong>Objectif :</strong> installer et mettre en service un serveur NAS Synology destiné au stockage centralisé et au partage des données, dans la salle serveur de l'auditorium (la plus grande salle de la Cité Royale).</p>
+          <p><strong>Étapes :</strong></p>
+          <ul>
+            <li>Installation physique du serveur Synology dans la baie, en respectant l'organisation du câblage et de l'environnement technique</li>
+            <li>Installation des 10 disques de stockage disponibles (sur les 12 emplacements prévus, 2 disques manquants au moment de l'intervention) — modèles <strong>WD Blue SA510</strong> de 4 To chacun, avec vérification du bon positionnement de chaque disque</li>
+            <li>Raccordement électrique et branchement réseau du NAS au réseau local de l'établissement</li>
+            <li>Accès à l'interface d'administration du Synology pour la configuration initiale</li>
+            <li>Configuration des paramètres réseau et attribution d'une adresse IP compatible avec l'infrastructure existante</li>
+            <li>Tests de connectivité pour confirmer la détection du NAS sur le réseau et son accès depuis le serveur principal</li>
+          </ul>
+          <div class="mission-image">
+            <img src="nas-synology-rack.png" alt="Installation du serveur NAS Synology dans la baie — avant / après" />
+            <p class="mission-image-caption">Avant / après : intégration du serveur NAS Synology (10 disques WD Blue SA510 de 4 To) dans la baie de la salle serveur de l'auditorium.</p>
+          </div>
+          <p><strong>Résultats :</strong> le NAS Synology est correctement détecté et accessible sur le réseau, prêt à accueillir les disques manquants et à être utilisé pour le stockage centralisé.</p>
+          <p><strong>Compétences développées :</strong> intégration d'un équipement dans une infrastructure réseau existante, mise en service d'un serveur NAS, configuration réseau, compréhension d'une architecture de stockage centralisée, tests de connectivité et de validation, respect des procédures d'installation en environnement professionnel.</p>
+        </div>
+      </details>
     </div>
 
     <!-- Apprentissage Vercel -->
@@ -543,6 +571,7 @@ ls</code>
             <li>Administration MobaXterm</li>
             <li>Réinstallation OS via clé USB bootée</li>
             <li>Déploiement logiciel avec Ninite</li>
+            <li>Installation et configuration d'un NAS Synology</li>
             <li>Déploiement web (Vercel / GitHub)</li>
           </ul>
         </div>
@@ -556,6 +585,7 @@ ls</code>
             <li>Analyse et résolution de problèmes</li>
             <li>Documentation technique</li>
             <li>Préparation d'un environnement de travail professionnel</li>
+            <li>Respect des procédures d'installation professionnelles</li>
           </ul>
         </div>
       </div>
@@ -563,8 +593,8 @@ ls</code>
 
     <div class="card" style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:16px;">
       <div>
-        <p style="font-weight:600; color:var(--navy); margin-bottom:4px;">Rapport de stage </p>
-        <p style="font-size:.88rem; color:var(--muted);">Voici quelques images de mon stage</p>
+        <p style="font-weight:600; color:var(--navy); margin-bottom:4px;">Rapport de stage complet</p>
+        <p style="font-size:.88rem; color:var(--muted);">Consulter le rapport détaillé sur Canva</p>
       </div>
       <a href="https://canva.link/3xe6xn7w3ljon00" target="_blank" rel="noopener"
          style="display:inline-flex; align-items:center; gap:8px; background:var(--accent); color:#fff;
