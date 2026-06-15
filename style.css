@@ -456,6 +456,30 @@ nav a:hover {
   line-height: 1.6;
 }
 
+/* ── MISSION IMAGE (illustration avant/après) ── */
+.mission-image {
+  margin-top: 14px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+  background: var(--white);
+}
+
+.mission-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.mission-image-caption {
+  font-size: .78rem;
+  color: var(--muted);
+  padding: 10px 14px;
+  border-top: 1px solid var(--border);
+  background: var(--light);
+  margin-bottom: 0;
+}
+
 /* ── SKILLS GRID ──────────────────────── */
 .skills-grid {
   display: grid;
