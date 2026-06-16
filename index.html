@@ -4,17 +4,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Portfolio — Chris-Elliot Bricky Matofaly</title>
-
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
-
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
   <!-- HERO -->
-  <section class="hero">
+  <section class="hero" id="hero-section">
     <div class="hero-content">
       <span class="hero-eyebrow">BTS SIO — Épreuve E4</span>
       <h1>Portfolio de<br><em>Chris-Elliot</em></h1>
@@ -26,677 +24,634 @@
 
   <!-- NAV -->
   <header>
-    <span class="logo">C<span>.</span>E</span>
-    <nav>
-      <a href="#presentation">Présentation</a>
-      <a href="#journey">Parcours</a>
-      <a href="#stage-noralsy">Noralsy</a>
-      <a href="#stage-hopital">St Joseph</a>
-      <a href="#stage">Cité Royale</a>
-      <a href="#projects">Projets</a>
-      <a href="#test">Épreuve</a>
-      <a href="#contact">Contact</a>
+    <span class="logo" onclick="showPage('home')" style="cursor:pointer;">C<span>.</span>E</span>
+    <button class="nav-burger" id="navBurger" onclick="toggleMenu()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <nav id="mainNav">
+      <a href="#" onclick="showPage('home')" data-page="home">Accueil</a>
+      <a href="#" onclick="showPage('parcours')" data-page="parcours">Parcours</a>
+      <div class="nav-dropdown">
+        <a href="#" class="nav-dropdown-toggle" data-page="stages">Stages ▾</a>
+        <div class="nav-dropdown-menu">
+          <a href="#" onclick="showPage('noralsy')" data-page="noralsy">Noralsy</a>
+          <a href="#" onclick="showPage('hopital')" data-page="hopital">St Joseph</a>
+          <a href="#" onclick="showPage('cite')" data-page="cite">Cité Royale</a>
+        </div>
+      </div>
+      <a href="#" onclick="showPage('projets')" data-page="projets">Projets</a>
+      <a href="#" onclick="showPage('epreuve')" data-page="epreuve">Épreuve E4</a>
+      <a href="#" onclick="showPage('contact')" data-page="contact">Contact</a>
     </nav>
   </header>
 
-  <!-- PRÉSENTATION -->
-  <div class="section-wrap" id="presentation">
-    <p class="section-label">À propos</p>
-    <h2 class="section-title">Présentation</h2>
-    <div class="card">
-      <p>
-        Bonjour, je m'appelle <strong>Chris-Elliot Bricky Matofaly</strong>.
+  <!-- ═══════════════════ PAGE : HOME ═══════════════════ -->
+  <div class="page active" id="page-home">
+    <div class="section-wrap">
+      <p class="section-label">À propos</p>
+      <h2 class="section-title">Présentation</h2>
+      <div class="card">
+        <p>Bonjour, je m'appelle <strong>Chris-Elliot Bricky Matofaly</strong>.
         Je suis étudiant en <strong>BTS SIO</strong> et ce portfolio présente mon parcours,
-        mes projets et mes compétences acquises durant ma formation.
-      </p>
+        mes projets et mes compétences acquises durant ma formation.</p>
+      </div>
+
+      <h2 class="section-title" style="margin-top:60px;">Mes stages</h2>
+      <div class="stages-home-grid">
+        <div class="stage-home-card" onclick="showPage('noralsy')">
+          <div class="shc-icon">🏭</div>
+          <div class="shc-body">
+            <div class="shc-label">Production informatique</div>
+            <h3>Noralsy</h3>
+            <p>Chennevières-sur-Marne · BTS 1ère année</p>
+            <div class="tag-row" style="margin-top:10px;">
+              <span class="tag">Électronique</span>
+              <span class="tag">Production</span>
+              <span class="tag">Logistique</span>
+            </div>
+          </div>
+          <div class="shc-arrow">→</div>
+        </div>
+
+        <div class="stage-home-card" onclick="showPage('hopital')">
+          <div class="shc-icon">🏥</div>
+          <div class="shc-body">
+            <div class="shc-label">Service informatique</div>
+            <h3>Hôpital Saint Joseph</h3>
+            <p>Paris 14e · BTS 1ère année</p>
+            <div class="tag-row" style="margin-top:10px;">
+              <span class="tag">Réseau</span>
+              <span class="tag">Brassage</span>
+              <span class="tag">Infrastructure</span>
+            </div>
+          </div>
+          <div class="shc-arrow">→</div>
+        </div>
+
+        <div class="stage-home-card" onclick="showPage('cite')">
+          <div class="shc-icon">🖥️</div>
+          <div class="shc-body">
+            <div class="shc-label">Service informatique</div>
+            <h3>Cité Royale</h3>
+            <p>Croissy-Beaubourg · BTS 2ème année · 18 mai – 16 juin 2026</p>
+            <div class="tag-row" style="margin-top:10px;">
+              <span class="tag">VMware</span>
+              <span class="tag">GLPI</span>
+              <span class="tag">Active Directory</span>
+              <span class="tag">NAS Synology</span>
+            </div>
+          </div>
+          <div class="shc-arrow">→</div>
+        </div>
+      </div>
     </div>
   </div>
 
-  <!-- PARCOURS -->
-  <div class="section-wrap" id="journey">
-    <p class="section-label">Expériences</p>
-    <h2 class="section-title">Parcours</h2>
-    <div class="card">
-      <h3>Stages effectués en entreprise</h3>
-
-      <div class="stage">
-        <div class="stage-dot"></div>
-        <div class="stage-text">
-          <strong>Agence Régionale de Santé (ARS) — 3ème</strong>
-          Stage dans le secteur informatique : maintenance et organisation de dossiers dans une boîte mail.
+  <!-- ═══════════════════ PAGE : PARCOURS ═══════════════════ -->
+  <div class="page" id="page-parcours">
+    <div class="section-wrap">
+      <p class="section-label">Expériences</p>
+      <h2 class="section-title">Parcours</h2>
+      <div class="card">
+        <h3>Stages effectués en entreprise</h3>
+        <div class="stage">
+          <div class="stage-dot"></div>
+          <div class="stage-text">
+            <strong>Agence Régionale de Santé (ARS) — 3ème</strong>
+            Stage dans le secteur informatique : maintenance et organisation de dossiers dans une boîte mail.
+          </div>
         </div>
-      </div>
-
-      <div class="stage">
-        <div class="stage-dot"></div>
-        <div class="stage-text">
-          <strong>Noralsy — Production informatique, Chennevières-sur-Marne</strong>
-          Montage et programmation d'appareils de contrôle d'accès, fabrication de badges, assistance à une machine de production automatisée et gestion du stock.
+        <div class="stage">
+          <div class="stage-dot"></div>
+          <div class="stage-text">
+            <strong>Noralsy — Production informatique, Chennevières-sur-Marne</strong>
+            Montage et programmation d'appareils de contrôle d'accès, fabrication de badges, assistance à une machine de production automatisée et gestion du stock.
+            <button class="inline-link" onclick="showPage('noralsy')">Voir le rapport →</button>
+          </div>
         </div>
-      </div>
-
-      <div class="stage">
-        <div class="stage-dot"></div>
-        <div class="stage-text">
-          <strong>Hôpital Saint Joseph — Service informatique, Paris 14e</strong>
-          Câblage réseau et brassage, mise en service d'un bloc opératoire, configuration d'un PC portable en réseau et aménagement de postes de travail.
+        <div class="stage">
+          <div class="stage-dot"></div>
+          <div class="stage-text">
+            <strong>Hôpital Saint Joseph — Service informatique, Paris 14e</strong>
+            Câblage réseau et brassage, mise en service d'un bloc opératoire, configuration d'un PC portable en réseau et aménagement de postes de travail.
+            <button class="inline-link" onclick="showPage('hopital')">Voir le rapport →</button>
+          </div>
         </div>
-      </div>
-
-      <div class="stage">
-        <div class="stage-dot"></div>
-        <div class="stage-text">
-          <strong>Cité Royale (ICC) — Service informatique, Croissy-Beaubourg</strong>
-          Déploiement d'une machine virtuelle Linux Ubuntu sur VMware, gestion du parc informatique via GLPI et FusionInventory, administration Active Directory, fusion de partitions sous Windows 10 avec AOMEI, réinstallation de postes avec clé USB bootée et déploiement logiciel via Ninite, installation et mise en service d'un serveur NAS Synology dans la salle serveur de l'auditorium.
+        <div class="stage">
+          <div class="stage-dot"></div>
+          <div class="stage-text">
+            <strong>Cité Royale (ICC) — Service informatique, Croissy-Beaubourg</strong>
+            Déploiement d'une VM Linux Ubuntu sur VMware, gestion du parc (GLPI/FusionInventory/Active Directory), fusion de partitions AOMEI, réinstallation OS via clé USB bootée + Ninite, installation d'un NAS Synology dans la salle serveur de l'auditorium.
+            <button class="inline-link" onclick="showPage('cite')">Voir le rapport →</button>
+          </div>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- RAPPORT NORALSY -->
-  <div class="section-wrap" id="stage-noralsy">
-    <p class="section-label">Rapport de stage</p>
-    <h2 class="section-title">Stage — Noralsy</h2>
-
-    <div class="card">
-      <h3>Présentation de l'entreprise</h3>
-      <p>
-        <strong>Noralsy</strong> est une société par actions simplifiées fondée en <strong>1979 à Paris</strong>,
+  <!-- ═══════════════════ PAGE : NORALSY ═══════════════════ -->
+  <div class="page" id="page-noralsy">
+    <div class="page-hero page-hero--noralsy">
+      <button class="back-btn" onclick="showPage('home')">← Retour</button>
+      <div class="page-hero-content">
+        <span class="page-hero-label">Rapport de stage · BTS 1ère année</span>
+        <h2>Noralsy</h2>
+        <p>Production informatique · Chennevières-sur-Marne</p>
+      </div>
+    </div>
+    <div class="section-wrap">
+      <div class="card">
+        <h3>Présentation de l'entreprise</h3>
+        <p><strong>Noralsy</strong> est une société par actions simplifiées fondée en <strong>1979 à Paris</strong>,
         située au 16 rue Lavoisier à Chennevières-sur-Marne. Spécialisée dans les systèmes
         d'interphonie, de contrôle d'accès et de vidéosurveillance, elle compte entre 50 et 99 salariés
-        et affichait un chiffre d'affaires de <strong>11 205 000 €</strong> en 2023.
-      </p>
-      <p>
-        Leader en France depuis plus de 40 ans, Noralsy propose des solutions connectées
+        et affichait un chiffre d'affaires de <strong>11 205 000 €</strong> en 2023.</p>
+        <p>Leader en France depuis plus de 40 ans, Noralsy propose des solutions connectées
         (gestion en temps réel, ouverture via smartphone, technologie 4G) et permet aux clients
-        d'imposer leurs propres designs et logos sur les équipements.
-      </p>
-      <div class="tag-row" style="margin-top:14px;">
-        <span class="tag">Interphonie</span>
-        <span class="tag">Contrôle d'accès</span>
-        <span class="tag">Vidéosurveillance</span>
-        <span class="tag">Électronique</span>
-        <span class="tag">Production</span>
+        d'imposer leurs propres designs et logos sur les équipements.</p>
+        <div class="tag-row" style="margin-top:14px;">
+          <span class="tag">Interphonie</span>
+          <span class="tag">Contrôle d'accès</span>
+          <span class="tag">Vidéosurveillance</span>
+          <span class="tag">Électronique</span>
+          <span class="tag">Production</span>
+        </div>
       </div>
-    </div>
 
-    <div class="card">
-      <h3>Tâches et activités</h3>
+      <div class="card">
+        <h3>Tâches et activités</h3>
+        <details class="accordion">
+          <summary>Montage d'écrans d'affichage</summary>
+          <div class="accordion-body">
+            <p>Montage et expédition d'écrans programmés par l'entreprise, contrôlables via un code client.</p>
+            <ul>
+              <li>Vissage du connecteur d'alimentation et de la prise Ethernet sur la plaque</li>
+              <li>Fixation du PC et du routeur sur la plaque</li>
+              <li>Branchement des câbles HDMI, USB et RJ45</li>
+              <li>Insertion d'une carte SIM dans le PC</li>
+              <li>Numérotation des équipements produits</li>
+              <li>Programmation via câble de gravure puis câble Ethernet</li>
+            </ul>
+          </div>
+        </details>
+        <details class="accordion">
+          <summary>Fabrication de badges</summary>
+          <div class="accordion-body">
+            <p>Application de peinture sur des badges à l'aide d'une machine dédiée :</p>
+            <ul>
+              <li>Prise d'une coque de badge et placement dans le moule</li>
+              <li>Actionnement de la pédale pour imprimer la peinture via tampon</li>
+              <li>Classement par couleur et caractéristiques</li>
+            </ul>
+          </div>
+        </details>
+        <details class="accordion">
+          <summary>Plastification de feuilles indicatives</summary>
+          <div class="accordion-body">
+            <p>Plastification de feuilles de référence pour le classement du stock :</p>
+            <ul>
+              <li>Télécommandes à 4 boutons classées par couleur</li>
+              <li>Badges en forme de clé pour préprogrammation</li>
+              <li>Collage sur cartons par couleur pour mise en stock</li>
+            </ul>
+          </div>
+        </details>
+        <details class="accordion">
+          <summary>Assistance à une machine de production automatisée</summary>
+          <div class="accordion-body">
+            <p>Participation à la mise en route d'une machine multi-fonctions (gravure, soudure, numérotation) :</p>
+            <ul>
+              <li>Chargement des badges sur le plateau circulaire d'entrée</li>
+              <li>Soudure automatique pour fermer les badges</li>
+              <li>Gravure et numérotation par ordre de rangement</li>
+              <li>Détection des badges mal fermés et tri automatique</li>
+              <li>Scan de conformité et conditionnement par 10 en boîtes</li>
+            </ul>
+          </div>
+        </details>
+        <details class="accordion">
+          <summary>Assistance au stockage (magasin)</summary>
+          <div class="accordion-body">
+            <p>Travail en entrepôt pour préparer les commandes clients :</p>
+            <ul>
+              <li>Recherche des produits par numéro de série dans les rayons</li>
+              <li>Préparation et emballage des colis</li>
+              <li>Utilisation de tableurs pour suivre les références à expédier</li>
+            </ul>
+          </div>
+        </details>
+      </div>
 
-      <details class="accordion">
-        <summary>Montage d'écrans d'affichage</summary>
-        <div class="accordion-body">
-          <p>Montage et expédition d'écrans programmés par l'entreprise, contrôlables via un code client.</p>
-          <ul>
-            <li>Vissage du connecteur d'alimentation et de la prise Ethernet sur la plaque</li>
-            <li>Fixation du PC et du routeur sur la plaque</li>
-            <li>Branchement des câbles HDMI, USB et RJ45</li>
-            <li>Insertion d'une carte SIM dans le PC</li>
-            <li>Numérotation des équipements produits</li>
-            <li>Programmation via câble de gravure puis câble Ethernet</li>
-          </ul>
-        </div>
-      </details>
-
-      <details class="accordion">
-        <summary>Fabrication de badges</summary>
-        <div class="accordion-body">
-          <p>Application de peinture sur des badges à l'aide d'une machine dédiée :</p>
-          <ul>
-            <li>Prise d'une coque de badge et placement dans le moule</li>
-            <li>Actionnement de la pédale pour imprimer la peinture via tampon</li>
-            <li>Classement par couleur et caractéristiques</li>
-          </ul>
-        </div>
-      </details>
-
-      <details class="accordion">
-        <summary>Plastification de feuilles indicatives</summary>
-        <div class="accordion-body">
-          <p>Plastification de feuilles de référence pour le classement du stock :</p>
-          <ul>
-            <li>Télécommandes à 4 boutons classées par couleur</li>
-            <li>Badges en forme de clé pour préprogrammation</li>
-            <li>Collage sur cartons par couleur pour mise en stock</li>
-          </ul>
-        </div>
-      </details>
-
-      <details class="accordion">
-        <summary>Assistance à une machine de production automatisée</summary>
-        <div class="accordion-body">
-          <p>Participation à la mise en route d'une machine multi-fonctions (gravure, soudure, numérotation) :</p>
-          <ul>
-            <li>Chargement des badges sur le plateau circulaire d'entrée</li>
-            <li>Soudure automatique pour fermer les badges</li>
-            <li>Gravure et numérotation par ordre de rangement</li>
-            <li>Détection des badges mal fermés et tri automatique</li>
-            <li>Scan de conformité et conditionnement par 10 en boîtes</li>
-          </ul>
-        </div>
-      </details>
-
-      <details class="accordion">
-        <summary>Assistance au stockage (magasin)</summary>
-        <div class="accordion-body">
-          <p>Travail en entrepôt pour préparer les commandes clients :</p>
-          <ul>
-            <li>Recherche des produits par numéro de série dans les rayons</li>
-            <li>Préparation et emballage des colis</li>
-            <li>Utilisation de tableurs pour suivre les références à expédier</li>
-          </ul>
-        </div>
-      </details>
-    </div>
-
-    <div class="card">
-      <h3>Bilan du stage</h3>
-      <p>
-        Ce stage chez Noralsy m'a permis d'acquérir des compétences techniques dans les domaines
+      <div class="card">
+        <h3>Bilan du stage</h3>
+        <p>Ce stage chez Noralsy m'a permis d'acquérir des compétences techniques dans les domaines
         de l'électronique, de la production informatique et de la logistique. J'ai découvert les
         différents types de conducteurs électriques, appris à monter des équipements connectés et
-        participé à l'intégration d'une machine de production automatisée.
-      </p>
+        participé à l'intégration d'une machine de production automatisée.</p>
+      </div>
     </div>
   </div>
 
-  <!-- RAPPORT HÔPITAL SAINT JOSEPH -->
-  <div class="section-wrap" id="stage-hopital">
-    <p class="section-label">Rapport de stage</p>
-    <h2 class="section-title">Stage — Hôpital Saint Joseph</h2>
-
-    <div class="card">
-      <h3>Présentation de l'établissement</h3>
-      <p>
-        L'<strong>Hôpital Saint Joseph</strong> est situé au 185 rue Raymond Losserand, Paris 14e.
+  <!-- ═══════════════════ PAGE : HÔPITAL SAINT JOSEPH ═══════════════════ -->
+  <div class="page" id="page-hopital">
+    <div class="page-hero page-hero--hopital">
+      <button class="back-btn" onclick="showPage('home')">← Retour</button>
+      <div class="page-hero-content">
+        <span class="page-hero-label">Rapport de stage · BTS 1ère année</span>
+        <h2>Hôpital Saint Joseph</h2>
+        <p>Service informatique · Paris 14e</p>
+      </div>
+    </div>
+    <div class="section-wrap">
+      <div class="card">
+        <h3>Présentation de l'établissement</h3>
+        <p>L'<strong>Hôpital Saint Joseph</strong> est situé au 185 rue Raymond Losserand, Paris 14e.
         Fondé en <strong>1878</strong>, il compte entre 2 000 et 4 999 salariés et constitue un
         groupe hospitalier composé de plusieurs établissements (Hôpital Léopold-Bellan, Clinique Arago,
-        Hôpital Sainte-Marie Paris, etc.).
-      </p>
-      <p>
-        Le service informatique est organisé en sous-équipes spécialisées : réseau, support technique,
-        sécurité des données et développement de logiciels internes.
-      </p>
-      <div class="tag-row" style="margin-top:14px;">
-        <span class="tag">Réseau</span>
-        <span class="tag">Brassage</span>
-        <span class="tag">Support technique</span>
-        <span class="tag">Configuration PC</span>
-        <span class="tag">Infrastructure</span>
+        Hôpital Sainte-Marie Paris, etc.).</p>
+        <p>Le service informatique est organisé en sous-équipes spécialisées : réseau, support technique,
+        sécurité des données et développement de logiciels internes.</p>
+        <div class="tag-row" style="margin-top:14px;">
+          <span class="tag">Réseau</span>
+          <span class="tag">Brassage</span>
+          <span class="tag">Support technique</span>
+          <span class="tag">Configuration PC</span>
+          <span class="tag">Infrastructure</span>
+        </div>
       </div>
-    </div>
 
-    <div class="card">
-      <h3>Tâches et activités</h3>
+      <div class="card">
+        <h3>Tâches et activités</h3>
+        <details class="accordion">
+          <summary>Configuration d'un ordinateur portable en réseau</summary>
+          <div class="accordion-body">
+            <p>Mise en réseau complète d'un PC portable pour l'hôpital :</p>
+            <ul>
+              <li>Connexion au réseau général de l'hôpital via câble</li>
+              <li>Saisie des mots de passe pour lancer la configuration automatique</li>
+              <li>Suivi du téléchargement et finalisation de l'installation</li>
+            </ul>
+          </div>
+        </details>
+        <details class="accordion">
+          <summary>Mise en service d'un bloc opératoire</summary>
+          <div class="accordion-body">
+            <p>Installation complète des équipements informatiques d'un service de réanimation (équipe de 5 personnes) :</p>
+            <ul>
+              <li>Récupération du matériel au sous-sol (PC, écrans, claviers/souris sans fil, câbles, imprimante)</li>
+              <li>Installation des claviers et souris sans fil sur les postes dans les blocs</li>
+              <li>Montage des postes de gestion en dehors des blocs opératoires</li>
+              <li>Brassage des prises réseau (ex : prise NGI 11) dans la baie pour connexion au réseau hospitalier</li>
+            </ul>
+          </div>
+        </details>
+        <details class="accordion">
+          <summary>Aménagement d'un open-space et de bureaux individuels</summary>
+          <div class="accordion-body">
+            <p>Installation complète de 3 bureaux individuels + un espace open-space :</p>
+            <ul>
+              <li>Installation pour chaque poste : écran Iiyama, PC Dell, clavier, souris, câble réseau</li>
+              <li>Brassage de l'ensemble des prises dans une grande baie de brassage</li>
+              <li>Mise en service et tests de connectivité</li>
+            </ul>
+          </div>
+        </details>
+      </div>
 
-      <details class="accordion">
-        <summary>Configuration d'un ordinateur portable en réseau</summary>
-        <div class="accordion-body">
-          <p>Mise en réseau complète d'un PC portable pour l'hôpital :</p>
-          <ul>
-            <li>Connexion au réseau général de l'hôpital via câble</li>
-            <li>Saisie des mots de passe pour lancer la configuration automatique</li>
-            <li>Suivi du téléchargement et finalisation de l'installation</li>
-          </ul>
-        </div>
-      </details>
-
-      <details class="accordion">
-        <summary>Mise en service d'un bloc opératoire</summary>
-        <div class="accordion-body">
-          <p>Installation complète des équipements informatiques d'un service de réanimation (équipe de 5 personnes) :</p>
-          <ul>
-            <li>Récupération du matériel au sous-sol (PC, écrans, claviers/souris sans fil, câbles, imprimante)</li>
-            <li>Installation des claviers et souris sans fil sur les postes dans les blocs</li>
-            <li>Montage des postes de gestion en dehors des blocs opératoires</li>
-            <li>Brassage des prises réseau (ex : prise NGI 11) dans la baie pour connexion au réseau hospitalier</li>
-          </ul>
-        </div>
-      </details>
-
-      <details class="accordion">
-        <summary>Aménagement d'un open-space et de bureaux individuels</summary>
-        <div class="accordion-body">
-          <p>Installation complète de 3 bureaux individuels + un espace open-space :</p>
-          <ul>
-            <li>Installation pour chaque poste : écran Iiyama, PC Dell, clavier, souris, câble réseau</li>
-            <li>Brassage de l'ensemble des prises dans une grande baie de brassage</li>
-            <li>Mise en service et tests de connectivité</li>
-          </ul>
-        </div>
-      </details>
-    </div>
-
-    <div class="card">
-      <h3>Bilan du stage</h3>
-      <p>
-        Ce stage au sein du service informatique de l'Hôpital Saint Joseph m'a permis de comprendre
+      <div class="card">
+        <h3>Bilan du stage</h3>
+        <p>Ce stage au sein du service informatique de l'Hôpital Saint Joseph m'a permis de comprendre
         l'importance des systèmes d'information dans un environnement médical. J'ai développé des
         compétences pratiques en câblage réseau, brassage et déploiement de postes, tout en prenant
-        conscience des enjeux de sécurité et de confidentialité des données dans le secteur hospitalier.
-      </p>
+        conscience des enjeux de sécurité et de confidentialité des données dans le secteur hospitalier.</p>
+      </div>
     </div>
   </div>
 
-  <!-- RAPPORT DE STAGE — CITÉ ROYALE -->
-  <div class="section-wrap" id="stage">
-    <p class="section-label">Rapport de stage</p>
-    <h2 class="section-title">Stage — Cité Royale</h2>
+  <!-- ═══════════════════ PAGE : CITÉ ROYALE ═══════════════════ -->
+  <div class="page" id="page-cite">
+    <div class="page-hero page-hero--cite">
+      <button class="back-btn" onclick="showPage('home')">← Retour</button>
+      <div class="page-hero-content">
+        <span class="page-hero-label">Rapport de stage · BTS 2ème année · 18 mai – 16 juin 2026</span>
+        <h2>Cité Royale</h2>
+        <p>Service informatique · Croissy-Beaubourg · Tuteur : B. Ezoua-Bayle</p>
+      </div>
+    </div>
+    <div class="section-wrap">
 
-    <div class="card">
-      <h3>Présentation de l'entreprise</h3>
-      <p>
-        Stage effectué à la <strong>Cité Royale</strong>, un grand complexe situé au
+      <div class="card">
+        <h3>Présentation de l'entreprise</h3>
+        <p>Stage effectué à la <strong>Cité Royale</strong>, un grand complexe situé au
         <strong>21 rue des Veilles Vignes, 77146 Croissy-Beaubourg</strong>, principalement utilisé par
         l'Impact Centre Chrétien (ICC). Ce lieu accueille des événements religieux,
-        culturels et des conférences réunissant plusieurs milliers de personnes. La Cité Royale contribue
-        également au dynamisme de la commune en attirant des visiteurs venant de toute la France et
-        de différents pays francophones.
-      </p>
-      <p>
-        Stage de fin d'années BTS SIO effectué du <strong>18 mai au 16 juin 2026</strong>, sous la tutelle de <strong>B. Ezoua-Bayle</strong>.
-        Le service informatique gère un parc composé de postes fixes, ordinateurs portables,
-        imprimantes réseau, serveurs Windows, équipements réseau et solutions de virtualisation.
-      </p>
-      <div class="tag-row" style="margin-top:14px;">
-        <span class="tag">VMware</span>
-        <span class="tag">GLPI</span>
-        <span class="tag">FusionInventory</span>
-        <span class="tag">Active Directory</span>
-        <span class="tag">AOMEI</span>
-        <span class="tag">Ubuntu Linux</span>
-        <span class="tag">Windows 10</span>
-        <span class="tag">DHCP</span>
-        <span class="tag">Cisco</span>
-        <span class="tag">MobaXterm</span>
-        <span class="tag">Ninite</span>
-        <span class="tag">Synology NAS</span>
-        <span class="tag">Vercel</span>
-        <span class="tag">GitHub</span>
+        culturels et des conférences réunissant plusieurs milliers de personnes.</p>
+        <p>Le service informatique gère un parc composé de postes fixes, ordinateurs portables,
+        imprimantes réseau, serveurs Windows, équipements réseau et solutions de virtualisation.</p>
+        <div class="tag-row" style="margin-top:14px;">
+          <span class="tag">VMware</span><span class="tag">GLPI</span><span class="tag">FusionInventory</span>
+          <span class="tag">Active Directory</span><span class="tag">AOMEI</span><span class="tag">Ubuntu Linux</span>
+          <span class="tag">Windows 10</span><span class="tag">DHCP</span><span class="tag">Cisco</span>
+          <span class="tag">MobaXterm</span><span class="tag">Ninite</span><span class="tag">Synology NAS</span>
+          <span class="tag">Vercel</span><span class="tag">GitHub</span>
+        </div>
       </div>
-    </div>
 
-    <!-- Organisation du service informatique -->
-    <div class="card">
-      <h3>Organisation du service informatique</h3>
-      <p>Le service informatique utilisait plusieurs outils d'administration pour gérer le parc et surveiller l'état des équipements :</p>
-      <div class="tag-row" style="margin-bottom:16px;">
-        <span class="tag">GLPI</span>
-        <span class="tag">FusionInventory</span>
-        <span class="tag">Active Directory</span>
-        <span class="tag">VMware</span>
-        <span class="tag">Outils de déploiement</span>
-        <span class="tag">Solutions de sauvegarde</span>
-      </div>
-      <p>Le service était divisé en plusieurs pôles complémentaires :</p>
-      <div class="service-grid">
-        <div class="service-item">
-          <div class="service-icon">💻</div>
-          <div>
-            <strong>Développement web</strong>
-            <p>Conception et maintenance des différents sites web de l'organisation selon les catégories utilisées.</p>
+      <div class="card">
+        <h3>Organisation du service informatique</h3>
+        <p>Le service était divisé en plusieurs pôles complémentaires :</p>
+        <div class="service-grid">
+          <div class="service-item">
+            <div class="service-icon">💻</div>
+            <div>
+              <strong>Développement web</strong>
+              <p>Conception et maintenance des sites web de l'organisation.</p>
+            </div>
           </div>
-        </div>
-        <div class="service-item">
-          <div class="service-icon">🎨</div>
-          <div>
-            <strong>Design & communication</strong>
-            <p>Conception des éléments visuels : logos, supports d'affichage et identité graphique.</p>
+          <div class="service-item">
+            <div class="service-icon">🎨</div>
+            <div>
+              <strong>Design &amp; communication</strong>
+              <p>Conception des éléments visuels : logos, supports d'affichage et identité graphique.</p>
+            </div>
           </div>
-        </div>
-        <div class="service-item">
-          <div class="service-icon">🔒</div>
-          <div>
-            <strong>Sécurité réseau</strong>
-            <p>Architecture sécurisée et gestion des équipements réseau : switches, routeurs, pare-feux (Administrateur Sécurité Réseau).</p>
+          <div class="service-item">
+            <div class="service-icon">🔒</div>
+            <div>
+              <strong>Sécurité réseau</strong>
+              <p>Architecture sécurisée et gestion des équipements réseau : switches, routeurs, pare-feux.</p>
+            </div>
           </div>
         </div>
       </div>
-    </div>
 
-    <!-- 7 missions -->
-    <div class="mission-grid">
-      <div class="mission-card">
-        <div class="mission-num">Mission 01</div>
-        <h4>Déploiement d'une VM Linux Ubuntu sur VMware</h4>
-        <p>Création et configuration d'une machine virtuelle Ubuntu sur VMware, installation complète du système et découverte des commandes Linux.</p>
+      <!-- GRILLE 7 MISSIONS -->
+      <div class="mission-grid">
+        <div class="mission-card"><div class="mission-num">Mission 01</div><h4>VM Linux Ubuntu sur VMware</h4><p>Création et configuration d'une machine virtuelle Ubuntu, installation complète du système et découverte des commandes Linux.</p></div>
+        <div class="mission-card"><div class="mission-num">Mission 02</div><h4>Gestion du parc informatique</h4><p>Supervision via GLPI et FusionInventory, gestion des comptes Active Directory et maintenance des postes.</p></div>
+        <div class="mission-card"><div class="mission-num">Mission 03</div><h4>Fusion de disques durs</h4><p>Fusion des partitions C: et D: avec AOMEI Partition Assistant pour augmenter l'espace disponible.</p></div>
+        <div class="mission-card"><div class="mission-num">Mission 04</div><h4>Configuration DHCP Wi-Fi</h4><p>Mise en place d'un service DHCP sur Windows Server pour les équipements Wi-Fi Cisco.</p></div>
+        <div class="mission-card"><div class="mission-num">Mission 05</div><h4>Mise en service d'un espace de travail</h4><p>Installation et configuration complète : postes, réseau, imprimante, TV avec boîtier IPTV.</p></div>
+        <div class="mission-card"><div class="mission-num">Mission 06</div><h4>Réinstallation postes + Ninite</h4><p>Remise en service via clé USB bootée, BIOS/UEFI et déploiement automatisé des logiciels avec Ninite.</p></div>
+        <div class="mission-card"><div class="mission-num">Mission 07</div><h4>Installation NAS Synology</h4><p>Installation physique et mise en service du NAS Synology dans la salle serveur de l'auditorium.</p></div>
       </div>
-      <div class="mission-card">
-        <div class="mission-num">Mission 02</div>
-        <h4>Gestion du parc informatique</h4>
-        <p>Supervision des équipements via GLPI et FusionInventory, gestion des comptes utilisateurs dans Active Directory et maintenance des postes.</p>
-      </div>
-      <div class="mission-card">
-        <div class="mission-num">Mission 03</div>
-        <h4>Fusion de disques durs sous Windows 10</h4>
-        <p>Utilisation d'AOMEI Partition Assistant pour fusionner deux partitions (C: et D:) et augmenter l'espace disponible sur le disque principal.</p>
-      </div>
-      <div class="mission-card">
-        <div class="mission-num">Mission 04</div>
-        <h4>Configuration DHCP pour points d'accès Wi-Fi</h4>
-        <p>Mise en place d'un service DHCP sur Windows Server pour l'attribution automatique des adresses IP aux équipements Wi-Fi Cisco.</p>
-      </div>
-      <div class="mission-card">
-        <div class="mission-num">Mission 05</div>
-        <h4>Mise en service d'un espace de travail</h4>
-        <p>Installation et configuration complète d'un nouvel espace informatique : postes, réseau, imprimante, télévision avec boîtier IPTV.</p>
-      </div>
-      <div class="mission-card">
-        <div class="mission-num">Mission 06</div>
-        <h4>Réinstallation de postes avec une clé USB bootée et Ninite</h4>
-        <p>Remise en service de plusieurs ordinateurs portables via une clé USB bootée, modification du BIOS/UEFI et déploiement automatisé des logiciels avec Ninite.</p>
-      </div>
-      <div class="mission-card">
-        <div class="mission-num">Mission 07</div>
-        <h4>Installation d'un serveur NAS Synology</h4>
-        <p>Installation physique et mise en service d'un serveur NAS Synology dans la salle serveur de l'auditorium pour le stockage centralisé et le partage des données.</p>
-      </div>
-    </div>
 
-    <div class="card">
-      <h3>Détail des missions</h3>
-
-      <details class="accordion">
-        <summary>Mission 1 — Machine virtuelle Linux Ubuntu (VMware)</summary>
-        <div class="accordion-body">
-          <p><strong>Objectif :</strong> créer un environnement de test sécurisé sans modifier le système hôte.</p>
-          <p><strong>Étapes :</strong></p>
-          <ul>
-            <li>Téléchargement de l'image ISO officielle Ubuntu</li>
-            <li>Création de la VM dans VMware (RAM, disque, processeurs)</li>
-            <li>Installation et configuration du système (langue, clavier, utilisateur)</li>
-            <li>Mise à jour du système, installation des outils VMware et tests réseau</li>
-          </ul>
-          <p><strong>Commandes utilisées :</strong></p>
-          <code>sudo apt update
+      <div class="card">
+        <h3>Détail des missions</h3>
+        <details class="accordion">
+          <summary>Mission 1 — Machine virtuelle Linux Ubuntu (VMware)</summary>
+          <div class="accordion-body">
+            <p><strong>Objectif :</strong> créer un environnement de test sécurisé sans modifier le système hôte.</p>
+            <ul>
+              <li>Téléchargement de l'image ISO officielle Ubuntu</li>
+              <li>Création de la VM dans VMware (RAM, disque, processeurs)</li>
+              <li>Installation et configuration du système (langue, clavier, utilisateur)</li>
+              <li>Mise à jour du système, installation des outils VMware et tests réseau</li>
+            </ul>
+            <p><strong>Commandes utilisées :</strong></p>
+            <code>sudo apt update
 sudo apt upgrade
 ip a
 pwd
 ls</code>
-          <p style="margin-top:10px;"><strong>Résultats :</strong> machine virtuelle fonctionnelle, compréhension de VMware et des bases Linux acquise.</p>
-        </div>
-      </details>
-
-      <details class="accordion">
-        <summary>Mission 2 — Gestion du parc informatique</summary>
-        <div class="accordion-body">
-          <p><strong>Outils utilisés :</strong></p>
-          <ul>
-            <li><strong>GLPI</strong> — inventaire, tickets d'incidents, gestion des utilisateurs</li>
-            <li><strong>FusionInventory</strong> — remontée automatique des informations matérielles et logicielles (agents installés sur postes Windows et Linux)</li>
-            <li><strong>Active Directory</strong> — création de comptes, groupes, GPO, sécurité des postes</li>
-          </ul>
-          <p><strong>Tâches effectuées :</strong> consultation du parc, vérification des postes, supervision, déploiement de logiciels, assistance utilisateur, maintenance matérielle et logicielle.</p>
-          <p><strong>Importance :</strong> La gestion de parc permet d'assurer le suivi des équipements, d'améliorer la sécurité, de limiter les pannes et d'anticiper les renouvellements matériels.</p>
-        </div>
-      </details>
-
-      <details class="accordion">
-        <summary>Mission 3 — Fusion de partitions avec AOMEI</summary>
-        <div class="accordion-body">
-          <p><strong>Objectif :</strong> fusionner les partitions C: et D: pour augmenter l'espace disponible.</p>
-          <p><strong>Étapes :</strong></p>
-          <ul>
-            <li>Analyse de la structure des disques existants (C: OS — 185,47 Go ; D: DATA — 279,45 Go)</li>
-            <li>Vérification et sauvegarde des données importantes</li>
-            <li>Sélection des partitions et lancement de la fusion dans AOMEI</li>
-            <li>Redémarrage et vérification finale du stockage et du démarrage Windows</li>
-          </ul>
-          <p><strong>Compétences développées :</strong> gestion du stockage Windows, compréhension des partitions, risques liés aux manipulations de disques, importance des sauvegardes.</p>
-        </div>
-      </details>
-
-      <details class="accordion">
-        <summary>Mission 4 — Configuration DHCP pour points d'accès Wi-Fi</summary>
-        <div class="accordion-body">
-          <p><strong>Objectif :</strong> permettre l'attribution automatique des adresses IP aux équipements Wi-Fi de l'entreprise.</p>
-          <p><strong>Étapes :</strong></p>
-          <ul>
-            <li>Analyse de l'infrastructure réseau (points d'accès, switches, serveur Windows)</li>
-            <li>Installation et activation du rôle DHCP sur Windows Server depuis le gestionnaire de serveur</li>
-            <li>Configuration de l'étendue DHCP (plage IP, masque, passerelle, DNS, durée du bail)</li>
-            <li>Connexion aux points d'accès Cisco via MobaXterm (CLI) à l'aide de leurs adresses IP</li>
-            <li>Accès à l'interface d'administration web de chaque équipement pour vérification</li>
-            <li>Suivi des adresses IP dans un fichier Excel dédié</li>
-            <li>Vérification de la connectivité et de l'attribution des adresses</li>
-          </ul>
-          <p><strong>Résultats :</strong> les équipements Wi-Fi obtiennent automatiquement leur configuration réseau sans intervention manuelle.</p>
-        </div>
-      </details>
-
-      <details class="accordion">
-        <summary>Mission 5 — Mise en service d'un espace de travail informatique</summary>
-        <div class="accordion-body">
-          <p><strong>Objectif :</strong> préparer et intégrer un nouvel espace de travail au réseau existant.</p>
-          <p><strong>Étapes :</strong></p>
-          <ul>
-            <li>Analyse des besoins : nombre de postes, équipements, connexions réseau</li>
-            <li>Installation des équipements : unités centrales, écrans, claviers, souris, câbles réseau, imprimante, télévision avec boîtier IPTV</li>
-            <li>Raccordement et vérification de chaque équipement</li>
-            <li>Vérification de la connectivité : réseau local, Internet, ressources partagées</li>
-            <li>Test des imprimantes réseau (impression d'une page de test)</li>
-          </ul>
-          <p><strong>Résultats :</strong> espace de travail entièrement opérationnel et intégré au réseau de l'entreprise.</p>
-        </div>
-      </details>
-
-      <details class="accordion">
-        <summary>Mission 6 — Réinstallation de postes avec une clé USB bootée et Ninite</summary>
-        <div class="accordion-body">
-          <p><strong>Objectif :</strong> remettre en service plusieurs ordinateurs portables nécessitant une réinstallation complète du système d'exploitation.</p>
-          <p><strong>Étapes :</strong></p>
-          <ul>
-            <li>Connexion de la clé USB bootée contenant les fichiers d'installation</li>
-            <li>Redémarrage et accès au BIOS/UEFI via la touche F2</li>
-            <li>Modification de l'ordre de démarrage pour placer la clé USB en priorité</li>
-            <li>Installation du système d'exploitation (choix de la langue, configuration du disque, installation des fichiers système)</li>
-            <li>Déploiement automatisé des logiciels via <strong>Ninite</strong> (présent directement sur la clé USB)</li>
-          </ul>
-          <p><strong>Logiciels installés avec Ninite :</strong></p>
-          <div class="tag-row">
-            <span class="tag">Google Chrome</span>
-            <span class="tag">Firefox</span>
-            <span class="tag">Opera</span>
-            <span class="tag">VLC</span>
-            <span class="tag">7-Zip</span>
-            <span class="tag">GIMP 3.2.4</span>
-            <span class="tag">Winamp</span>
-            <span class="tag">Visual Studio Code</span>
-            <span class="tag">FileZilla</span>
-            <span class="tag">OpenOffice</span>
-            <span class="tag">SumatraPDF</span>
+            <p style="margin-top:10px;"><strong>Résultats :</strong> machine virtuelle fonctionnelle, compréhension de VMware et des bases Linux acquise.</p>
           </div>
-          <p style="margin-top:12px;"><strong>Compétences développées :</strong> installation et configuration d'un OS, modification des paramètres BIOS/UEFI, utilisation d'outils d'automatisation du déploiement logiciel, optimisation du temps d'intervention.</p>
-        </div>
-      </details>
-
-      <details class="accordion">
-        <summary>Mission 7 — Installation d'un serveur NAS Synology</summary>
-        <div class="accordion-body">
-          <p><strong>Objectif :</strong> installer et mettre en service un serveur NAS Synology destiné au stockage centralisé et au partage des données, dans la salle serveur de l'auditorium (la plus grande salle de la Cité Royale).</p>
-          <p><strong>Étapes :</strong></p>
-          <ul>
-            <li>Installation physique du serveur Synology dans la baie, en respectant l'organisation du câblage et de l'environnement technique</li>
-            <li>Installation des 10 disques de stockage disponibles (sur les 12 emplacements prévus, 2 disques manquants au moment de l'intervention) — modèles <strong>WD Blue SA510</strong> de 4 To chacun, avec vérification du bon positionnement de chaque disque</li>
-            <li>Raccordement électrique et branchement réseau du NAS au réseau local de l'établissement</li>
-            <li>Accès à l'interface d'administration du Synology pour la configuration initiale</li>
-            <li>Configuration des paramètres réseau et attribution d'une adresse IP compatible avec l'infrastructure existante</li>
-            <li>Tests de connectivité pour confirmer la détection du NAS sur le réseau et son accès depuis le serveur principal</li>
-          </ul>
-          <div class="mission-image">
-            <img src="nas-synology-rack.png" alt="Installation du serveur NAS Synology dans la baie — avant / après" />
-            <p class="mission-image-caption">Avant / après : intégration du serveur NAS Synology (10 disques WD Blue SA510 de 4 To) dans la baie de la salle serveur de l'auditorium.</p>
+        </details>
+        <details class="accordion">
+          <summary>Mission 2 — Gestion du parc informatique</summary>
+          <div class="accordion-body">
+            <ul>
+              <li><strong>GLPI</strong> — inventaire, tickets d'incidents, gestion des utilisateurs</li>
+              <li><strong>FusionInventory</strong> — remontée automatique des informations matérielles et logicielles</li>
+              <li><strong>Active Directory</strong> — création de comptes, groupes, GPO, sécurité des postes</li>
+            </ul>
+            <p><strong>Tâches :</strong> consultation du parc, vérification des postes, supervision, déploiement de logiciels, assistance utilisateur, maintenance matérielle et logicielle.</p>
           </div>
-          <p><strong>Résultats :</strong> le NAS Synology est correctement détecté et accessible sur le réseau, prêt à accueillir les disques manquants et à être utilisé pour le stockage centralisé.</p>
-          <p><strong>Compétences développées :</strong> intégration d'un équipement dans une infrastructure réseau existante, mise en service d'un serveur NAS, configuration réseau, compréhension d'une architecture de stockage centralisée, tests de connectivité et de validation, respect des procédures d'installation en environnement professionnel.</p>
-        </div>
-      </details>
-    </div>
+        </details>
+        <details class="accordion">
+          <summary>Mission 3 — Fusion de partitions avec AOMEI</summary>
+          <div class="accordion-body">
+            <p><strong>Objectif :</strong> fusionner les partitions C: et D: pour augmenter l'espace disponible.</p>
+            <ul>
+              <li>Analyse de la structure des disques (C: OS — 185,47 Go ; D: DATA — 279,45 Go)</li>
+              <li>Vérification et sauvegarde des données importantes</li>
+              <li>Sélection des partitions et lancement de la fusion dans AOMEI</li>
+              <li>Redémarrage et vérification finale du stockage et du démarrage Windows</li>
+            </ul>
+          </div>
+        </details>
+        <details class="accordion">
+          <summary>Mission 4 — Configuration DHCP pour points d'accès Wi-Fi</summary>
+          <div class="accordion-body">
+            <p><strong>Objectif :</strong> attribution automatique des adresses IP aux équipements Wi-Fi.</p>
+            <ul>
+              <li>Analyse de l'infrastructure réseau (points d'accès, switches, serveur Windows)</li>
+              <li>Installation et activation du rôle DHCP sur Windows Server</li>
+              <li>Configuration de l'étendue DHCP (plage IP, masque, passerelle, DNS, durée du bail)</li>
+              <li>Connexion aux points d'accès Cisco via MobaXterm (CLI)</li>
+              <li>Suivi des adresses IP dans un fichier Excel dédié</li>
+              <li>Vérification de la connectivité et de l'attribution des adresses</li>
+            </ul>
+          </div>
+        </details>
+        <details class="accordion">
+          <summary>Mission 5 — Mise en service d'un espace de travail informatique</summary>
+          <div class="accordion-body">
+            <p><strong>Objectif :</strong> préparer et intégrer un nouvel espace de travail au réseau existant.</p>
+            <ul>
+              <li>Analyse des besoins : nombre de postes, équipements, connexions réseau</li>
+              <li>Installation : unités centrales, écrans, claviers, souris, câbles réseau, imprimante, TV avec boîtier IPTV</li>
+              <li>Raccordement et vérification de chaque équipement</li>
+              <li>Tests de connectivité : réseau local, Internet, ressources partagées, imprimante</li>
+            </ul>
+          </div>
+        </details>
+        <details class="accordion">
+          <summary>Mission 6 — Réinstallation de postes avec une clé USB bootée et Ninite</summary>
+          <div class="accordion-body">
+            <p><strong>Objectif :</strong> remettre en service plusieurs ordinateurs portables via réinstallation complète.</p>
+            <ul>
+              <li>Connexion de la clé USB bootée contenant les fichiers d'installation</li>
+              <li>Redémarrage et accès au BIOS/UEFI via la touche F2</li>
+              <li>Modification de l'ordre de démarrage pour placer la clé USB en priorité</li>
+              <li>Installation du système d'exploitation</li>
+              <li>Déploiement automatisé des logiciels via <strong>Ninite</strong></li>
+            </ul>
+            <p><strong>Logiciels installés avec Ninite :</strong></p>
+            <div class="tag-row">
+              <span class="tag">Google Chrome</span><span class="tag">Firefox</span><span class="tag">Opera</span>
+              <span class="tag">VLC</span><span class="tag">7-Zip</span><span class="tag">GIMP 3.2.4</span>
+              <span class="tag">Winamp</span><span class="tag">Visual Studio Code</span>
+              <span class="tag">FileZilla</span><span class="tag">OpenOffice</span><span class="tag">SumatraPDF</span>
+            </div>
+          </div>
+        </details>
+        <details class="accordion">
+          <summary>Mission 7 — Installation d'un serveur NAS Synology</summary>
+          <div class="accordion-body">
+            <p><strong>Objectif :</strong> installer et mettre en service un serveur NAS Synology dans la salle serveur de l'auditorium.</p>
+            <ul>
+              <li>Installation physique dans la baie en respectant l'organisation du câblage</li>
+              <li>Installation de 10 disques <strong>WD Blue SA510 de 4 To</strong> (sur 12 emplacements, 2 manquants)</li>
+              <li>Raccordement électrique et branchement réseau au réseau local</li>
+              <li>Configuration initiale via l'interface d'administration Synology</li>
+              <li>Attribution d'une adresse IP compatible avec l'infrastructure existante</li>
+              <li>Tests de connectivité depuis le serveur principal</li>
+            </ul>
+            <div class="mission-image">
+              <img src="nas-synology-rack.png" alt="Installation du serveur NAS Synology — avant / après" />
+              <p class="mission-image-caption">Avant / après : intégration du NAS Synology (10 disques WD Blue SA510 de 4 To) dans la baie de la salle serveur de l'auditorium.</p>
+            </div>
+          </div>
+        </details>
+      </div>
 
-    <!-- Apprentissage Vercel -->
-    <div class="card">
-      <h3>Apprentissage — Déploiement via Vercel</h3>
-      <p>
-        Mon tuteur m'a initié au déploiement d'un portfolio numérique en ligne via <strong>Vercel</strong>,
-        une plateforme d'hébergement web permettant de publier facilement des sites depuis GitHub.
-      </p>
-      <details class="accordion" style="margin-top:16px;">
-        <summary>Étapes du déploiement</summary>
-        <div class="accordion-body">
-          <ul>
-            <li>Découverte de la structure du projet (HTML, CSS, images) et rôle de chaque fichier</li>
-            <li>Création d'un dépôt GitHub et envoi des fichiers (gestion de versions)</li>
-            <li>Connexion du dépôt à Vercel et configuration des paramètres de déploiement</li>
-            <li>Déploiement automatique et génération de l'URL publique</li>
-            <li>Vérifications : affichage, liens, images, compatibilité navigateurs, temps de chargement</li>
-            <li>Test de la mise à jour automatique après modification du dépôt GitHub</li>
-          </ul>
-          <p style="margin-top:10px;"><strong>Portfolio en ligne :</strong> <a href="https://portfolio-stage-five.vercel.app/" target="_blank" rel="noopener" style="color:var(--accent);">portfolio-stage-five.vercel.app</a></p>
-        </div>
-      </details>
-    </div>
+      <!-- Apprentissage Vercel -->
+      <div class="card">
+        <h3>Apprentissage — Déploiement via Vercel</h3>
+        <p>Mon tuteur m'a initié au déploiement d'un portfolio numérique en ligne via <strong>Vercel</strong>,
+        une plateforme d'hébergement web permettant de publier facilement des sites depuis GitHub.</p>
+        <details class="accordion" style="margin-top:16px;">
+          <summary>Étapes du déploiement</summary>
+          <div class="accordion-body">
+            <ul>
+              <li>Découverte de la structure du projet (HTML, CSS, images)</li>
+              <li>Création d'un dépôt GitHub et envoi des fichiers</li>
+              <li>Connexion du dépôt à Vercel et configuration des paramètres</li>
+              <li>Déploiement automatique et génération de l'URL publique</li>
+              <li>Vérifications : affichage, liens, images, compatibilité navigateurs</li>
+              <li>Test de la mise à jour automatique après modification du dépôt</li>
+            </ul>
+            <p style="margin-top:10px;"><strong>Portfolio en ligne :</strong> <a href="https://portfolio-stage-five.vercel.app/" target="_blank" rel="noopener" style="color:var(--accent);">portfolio-stage-five.vercel.app</a></p>
+          </div>
+        </details>
+      </div>
 
-    <div class="card">
-      <h3>Compétences acquises</h3>
-      <div class="skills-grid">
-        <div class="skills-block">
-          <h4>Techniques</h4>
-          <ul>
-            <li>Installation d'un système Linux</li>
-            <li>Virtualisation avec VMware</li>
-            <li>Gestion de parc (GLPI)</li>
-            <li>FusionInventory & Active Directory</li>
-            <li>Gestion des partitions Windows</li>
-            <li>Configuration DHCP / réseau Cisco</li>
-            <li>Administration MobaXterm</li>
-            <li>Réinstallation OS via clé USB bootée</li>
-            <li>Déploiement logiciel avec Ninite</li>
-            <li>Installation et configuration d'un NAS Synology</li>
-            <li>Déploiement web (Vercel / GitHub)</li>
-          </ul>
-        </div>
-        <div class="skills-block">
-          <h4>Professionnelles</h4>
-          <ul>
-            <li>Autonomie</li>
-            <li>Organisation</li>
-            <li>Travail en équipe</li>
-            <li>Communication</li>
-            <li>Analyse et résolution de problèmes</li>
-            <li>Documentation technique</li>
-            <li>Préparation d'un environnement de travail professionnel</li>
-            <li>Respect des procédures d'installation professionnelles</li>
-          </ul>
+      <div class="card">
+        <h3>Compétences acquises</h3>
+        <div class="skills-grid">
+          <div class="skills-block">
+            <h4>Techniques</h4>
+            <ul>
+              <li>Installation d'un système Linux</li>
+              <li>Virtualisation avec VMware</li>
+              <li>Gestion de parc (GLPI)</li>
+              <li>FusionInventory &amp; Active Directory</li>
+              <li>Gestion des partitions Windows</li>
+              <li>Configuration DHCP / réseau Cisco</li>
+              <li>Administration MobaXterm</li>
+              <li>Réinstallation OS via clé USB bootée</li>
+              <li>Déploiement logiciel avec Ninite</li>
+              <li>Installation et configuration d'un NAS Synology</li>
+              <li>Déploiement web (Vercel / GitHub)</li>
+            </ul>
+          </div>
+          <div class="skills-block">
+            <h4>Professionnelles</h4>
+            <ul>
+              <li>Autonomie</li>
+              <li>Organisation</li>
+              <li>Travail en équipe</li>
+              <li>Communication</li>
+              <li>Analyse et résolution de problèmes</li>
+              <li>Documentation technique</li>
+              <li>Préparation d'un environnement de travail professionnel</li>
+              <li>Respect des procédures d'installation professionnelles</li>
+            </ul>
+          </div>
         </div>
       </div>
-    </div>
 
-    <div class="card" style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:16px;">
-      <div>
-        <p style="font-weight:600; color:var(--navy); margin-bottom:4px;">Rapport de stage complet</p>
-        <p style="font-size:.88rem; color:var(--muted);">Consulter le rapport détaillé sur Canva</p>
+      <div class="card" style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;">
+        <div>
+          <p style="font-weight:600;color:var(--navy);margin-bottom:4px;">Rapport de stage complet</p>
+          <p style="font-size:.88rem;color:var(--muted);">Consulter le rapport détaillé sur Canva</p>
+        </div>
+        <a href="https://canva.link/3xe6xn7w3ljon00" target="_blank" rel="noopener" class="btn-link">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          Voir le rapport
+        </a>
       </div>
-      <a href="https://canva.link/3xe6xn7w3ljon00" target="_blank" rel="noopener"
-         style="display:inline-flex; align-items:center; gap:8px; background:var(--accent); color:#fff;
-                text-decoration:none; padding:10px 22px; border-radius:8px; font-size:.88rem;
-                font-weight:600; transition:opacity .2s;"
-         onmouseover="this.style.opacity='.85'" onmouseout="this.style.opacity='1'">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-        Voir le rapport
-      </a>
-    </div>
 
-    <div class="card" style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:16px;">
-      <div>
-        <p style="font-weight:600; color:var(--navy); margin-bottom:4px;">Rapport de stage (version Word)</p>
-        <p style="font-size:.88rem; color:var(--muted);">Consulter le document complet sur OneDrive</p>
+      <div class="card" style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;">
+        <div>
+          <p style="font-weight:600;color:var(--navy);margin-bottom:4px;">Rapport de stage (version Word)</p>
+          <p style="font-size:.88rem;color:var(--muted);">Consulter le document complet sur OneDrive</p>
+        </div>
+        <a href="https://1drv.ms/w/c/7e4ae454a2a04cdf/IQCrjtzisxWIT6Il_Z_YCw7TAexWip9oZum0V1tmVdWXl_U?e=u7HbBS" target="_blank" rel="noopener" class="btn-link">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          Voir le rapport
+        </a>
       </div>
-      <a href="https://1drv.ms/w/c/7e4ae454a2a04cdf/IQCrjtzisxWIT6Il_Z_YCw7TAexWip9oZum0V1tmVdWXl_U?e=8UFdi9" target="_blank" rel="noopener"
-         style="display:inline-flex; align-items:center; gap:8px; background:var(--accent); color:#fff;
-                text-decoration:none; padding:10px 22px; border-radius:8px; font-size:.88rem;
-                font-weight:600; transition:opacity .2s;"
-         onmouseover="this.style.opacity='.85'" onmouseout="this.style.opacity='1'">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-        Voir le rapport
-      </a>
+
     </div>
   </div>
 
-  <!-- PROJETS -->
-  <div class="section-wrap" id="projects">
-    <p class="section-label">Travaux</p>
-    <h2 class="section-title">Projets</h2>
-    <div class="card">
-      <h3>Veille technologique — Intelligence Artificielle</h3>
-      <p>
-        L'intelligence artificielle occupe aujourd'hui une place centrale dans l'évolution
+  <!-- ═══════════════════ PAGE : PROJETS ═══════════════════ -->
+  <div class="page" id="page-projets">
+    <div class="section-wrap">
+      <p class="section-label">Travaux</p>
+      <h2 class="section-title">Projets</h2>
+      <div class="card">
+        <h3>Veille technologique — Intelligence Artificielle</h3>
+        <p>L'intelligence artificielle occupe aujourd'hui une place centrale dans l'évolution
         des technologies numériques. Elle transforme profondément les modes de travail,
-        la création de contenu, la prise de décision et les interactions humaines.
-      </p>
-      <p>
-        Face à cette évolution, j'ai choisi de consacrer ma veille à ses applications
+        la création de contenu, la prise de décision et les interactions humaines.</p>
+        <p>Face à cette évolution, j'ai choisi de consacrer ma veille à ses applications
         récentes dans le développement informatique, la génération de contenu et
-        l'automatisation des tâches.
-      </p>
-      <p>Outils utilisés pour la veille :</p>
-      <div class="tag-row">
-        <span class="tag">Feedly</span>
-        <span class="tag">Google Alerts</span>
+        l'automatisation des tâches.</p>
+        <p>Outils utilisés pour la veille :</p>
+        <div class="tag-row">
+          <span class="tag">Feedly</span>
+          <span class="tag">Google Alerts</span>
+        </div>
       </div>
     </div>
   </div>
 
-  <!-- ÉPREUVE -->
-  <div class="section-wrap" id="test">
-    <p class="section-label">Certification</p>
-    <h2 class="section-title">Épreuve E4</h2>
-    <div class="card">
-      <h3>Présentation de l'épreuve</h3>
-      <p>
-        L'épreuve E4 évalue la capacité à mobiliser des compétences techniques
+  <!-- ═══════════════════ PAGE : ÉPREUVE E4 ═══════════════════ -->
+  <div class="page" id="page-epreuve">
+    <div class="section-wrap">
+      <p class="section-label">Certification</p>
+      <h2 class="section-title">Épreuve E4</h2>
+      <div class="card">
+        <h3>Présentation de l'épreuve</h3>
+        <p>L'épreuve E4 évalue la capacité à mobiliser des compétences techniques
         à travers des situations professionnelles réelles (stages, projets, missions).
-        Le support est constitué de deux réalisations professionnelles choisies par le candidat.
-      </p>
-      <p>Durée de l'oral : <strong>environ 40 minutes</strong>, avec période de préparation.</p>
-
-      <div class="steps">
-        <div class="step">
-          <div class="step-num">1</div>
-          <div class="step-body">Présentation des réalisations : contexte, objectifs et résultats obtenus.</div>
-        </div>
-        <div class="step">
-          <div class="step-num">2</div>
-          <div class="step-body">Questions du jury pour vérifier la maîtrise des compétences techniques et comportementales.</div>
-        </div>
-        <div class="step">
-          <div class="step-num">3</div>
-          <div class="step-body">Évaluation du niveau de maîtrise selon une grille d'appréciation.</div>
+        Le support est constitué de deux réalisations professionnelles choisies par le candidat.</p>
+        <p>Durée de l'oral : <strong>environ 40 minutes</strong>, avec période de préparation.</p>
+        <div class="steps">
+          <div class="step"><div class="step-num">1</div><div class="step-body">Présentation des réalisations : contexte, objectifs et résultats obtenus.</div></div>
+          <div class="step"><div class="step-num">2</div><div class="step-body">Questions du jury pour vérifier la maîtrise des compétences techniques et comportementales.</div></div>
+          <div class="step"><div class="step-num">3</div><div class="step-body">Évaluation du niveau de maîtrise selon une grille d'appréciation.</div></div>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- CONTACT -->
-  <div class="section-wrap" id="contact">
-    <p class="section-label">Me joindre</p>
-    <h2 class="section-title">Contact</h2>
-    <div class="contact-grid">
-      <div class="contact-item">
-        <div class="contact-icon">
-          <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg>
+  <!-- ═══════════════════ PAGE : CONTACT ═══════════════════ -->
+  <div class="page" id="page-contact">
+    <div class="section-wrap">
+      <p class="section-label">Me joindre</p>
+      <h2 class="section-title">Contact</h2>
+      <div class="contact-grid">
+        <div class="contact-item">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg>
+          </div>
+          <div>
+            <div class="contact-label">Email</div>
+            <div class="contact-value">chriselliotbricky@gmail.com</div>
+          </div>
         </div>
-        <div>
-          <div class="contact-label">Email</div>
-          <div class="contact-value">chriselliotbricky@gmail.com</div>
-        </div>
-      </div>
-      <div class="contact-item">
-        <div class="contact-icon">
-          <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.07 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 2.98 1.2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2.02z"/></svg>
-        </div>
-        <div>
-          <div class="contact-label">Téléphone</div>
-          <div class="contact-value">07 58 31 93 37</div>
+        <div class="contact-item">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.07 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 2.98 1.2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2.02z"/></svg>
+          </div>
+          <div>
+            <div class="contact-label">Téléphone</div>
+            <div class="contact-value">07 58 31 93 37</div>
+          </div>
         </div>
       </div>
     </div>
@@ -707,5 +662,41 @@ ls</code>
     &copy; 2026 — <strong>Chris-Elliot Bricky Matofaly</strong>
   </footer>
 
+  <script>
+    function showPage(id) {
+      // Masquer toutes les pages
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+      // Afficher la page cible
+      const target = document.getElementById('page-' + id);
+      if (target) {
+        target.classList.add('active');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+      // Mettre à jour les liens actifs
+      document.querySelectorAll('nav a').forEach(a => {
+        a.classList.toggle('active', a.dataset.page === id);
+      });
+      // Fermer le menu mobile si ouvert
+      document.getElementById('mainNav').classList.remove('open');
+      document.getElementById('navBurger').classList.remove('open');
+      return false;
+    }
+
+    function toggleMenu() {
+      document.getElementById('mainNav').classList.toggle('open');
+      document.getElementById('navBurger').classList.toggle('open');
+    }
+
+    // Dropdown stages au survol / clic
+    const dropdown = document.querySelector('.nav-dropdown');
+    const toggle = dropdown.querySelector('.nav-dropdown-toggle');
+    toggle.addEventListener('click', (e) => {
+      e.preventDefault();
+      dropdown.classList.toggle('open');
+    });
+    document.addEventListener('click', (e) => {
+      if (!dropdown.contains(e.target)) dropdown.classList.remove('open');
+    });
+  </script>
 </body>
 </html>
